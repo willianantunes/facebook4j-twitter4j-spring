@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.unify.pss.test</groupId>
+  <artifactId>facebook4j-twitter4j-spring</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <name>facebook4j-twitter4j-spring</name>
+  <url>http://willianantunes.blogspot.com/2015/04/facebook-e-twitter-4j.html</url>
+  
+  <developers>
+  	<developer>
+  		<name>Willian Antunes</name>
+  		<url>http://willianantunes.blogspot.com.br/</url>
+  		<timezone>-3</timezone>
+  	</developer>
+  </developers>    
+  
+  <properties>
+	<spring.version>4.1.6.RELEASE</spring.version>
+  </properties>  
+  
+  <dependencies>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>${spring.version}</version>
+	</dependency>		
+	<dependency>
+		<groupId>jstl</groupId>
+		<artifactId>jstl</artifactId>
+		<version>1.2</version>	
+	</dependency>		
+	
+	<dependency>
+		<groupId>org.facebook4j</groupId>
+		<artifactId>facebook4j-core</artifactId>
+		<version>[2.2,)</version>
+	</dependency>
+	<dependency>
+		<groupId>org.twitter4j</groupId>
+		<artifactId>twitter4j-core</artifactId>
+		<version>[4.0,)</version>
+	</dependency>	
+	
+	<!-- Logging -->
+	<dependency>
+		<groupId>org.jboss.logging</groupId>
+		<artifactId>jboss-logging</artifactId>
+		<version>3.1.0.CR1</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<version>1.7.10</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>jul-to-slf4j</artifactId>
+		<version>1.7.10</version>
+		<exclusions>
+			<exclusion>
+				<artifactId>slf4j-api</artifactId>
+				<groupId>org.slf4j</groupId>
+			</exclusion>
+		</exclusions>
+	</dependency>	
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>jcl-over-slf4j</artifactId>
+		<version>1.7.10</version>
+		<exclusions>
+			<exclusion>
+				<artifactId>slf4j-api</artifactId>
+				<groupId>org.slf4j</groupId>
+			</exclusion>
+		</exclusions>
+	</dependency>	
+	<!-- end of Logging -->		
+  </dependencies>
+
+  
+  <build>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+		<!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.2</version>
+			<configuration>
+				<source>1.7</source>
+				<target>1.7</target>
+				<encoding>${project.build.sourceEncoding}</encoding>
+				<!-- http://www.geekality.net/2013/03/20/download-sources-and-javadocs-for-eclipse-through-maven/ -->
+				<downloadJavadocs>true</downloadJavadocs>				
+			</configuration>
+		</plugin>    
+    </plugins>
+  </build>
+</project>
